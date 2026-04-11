@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAU/USD Trading</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <button onclick="navigateTo('home')">Начало</button>
+        <button onclick="navigateTo('trend')">Определяне на Тренда</button>
+        <button onclick="navigateTo('supportResistance')">Нива на Подкрепа и Съпротива</button>
+        <button onclick="navigateTo('fvg')">Какво е FVG?</button>
+        <button onclick="navigateTo('emaStrategy')">50EMA и 200EMA</button>
+        <button onclick="navigateTo('basicCandles')">Основни единични свещи</button>
+        <button onclick="navigateTo('doubleCandles')">Двойни свещни модели</button>
+        <button onclick="navigateTo('tripleCandles')">Тройни модели</button>
+        <button onclick="navigateTo('continuationPatterns')">Продължаващи модели</button>
+        <button onclick="navigateTo('smt')">Какво е SMT?</button>
+    </nav>
+
+    <div id="app"></div>
+
+    <!-- Модален прозорец за обяснения -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

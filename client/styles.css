@@ -1,0 +1,210 @@
+/* Основни стилове */
+body {
+    background: linear-gradient(135deg, #111 0%, #222 100%);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+nav {
+    background: linear-gradient(90deg, #333 0%, #555 50%, #333 100%);
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #007bff;
+    display: flex;
+}
+
+button {
+    background: linear-gradient(45deg, #007bff 0%, #0056b3 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0056b3 0%, #004085 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Страници */
+#app {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.card {
+    background: linear-gradient(135deg, #333 0%, #444 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    border-left: 5px solid #28a745; /* Зелен за бичи */
+}
+
+.card.bearish {
+    border-left-color: #dc3545; /* Червен за мечи */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #444;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #007bff;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Изображения */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Модален прозорец */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Tablet и надолу */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    #app {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 16px;
+        margin: 12px 0;
+        border-radius: 12px;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    ul li {
+        padding: 12px;
+        font-size: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    h1 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .modal-content {
+        width: 92%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 16px;
+        border-radius: 12px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* Малки телефони */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+
+    ul li {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
