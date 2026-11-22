@@ -6,8 +6,7 @@
 
 ## Live Demo
 
-**[Отвори Live Demo](
-ilich-trading.netlify.app)** 
+[Отвори Live Demo](https://ilich-trading.netlify.app/)
 
 ## За проекта
 
