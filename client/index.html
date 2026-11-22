@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#0b1220">
-    <meta name="description" content="Практическа академия за трейдинг: пазарна структура, технически анализ, стратегии и управление на риска.">
+    <meta id="meta-description" name="description" content="Практическа академия за трейдинг: пазарна структура, технически анализ, стратегии и управление на риска.">
     <title>Ilich Trading Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,14 @@
             </span>
         </a>
         <div class="topbar-right">
-            <span class="learning-badge"><span class="status-dot"></span> Учебен режим</span>
+            <span class="learning-badge"><span class="status-dot"></span><span data-i18n="learningMode">Учебен режим</span></span>
+            <div class="language-switch" role="group" aria-label="Избор на език">
+                <button type="button" class="language-option is-active" data-language="bg" aria-pressed="true" lang="bg">BG</button>
+                <button type="button" class="language-option" data-language="en" aria-pressed="false" lang="en">EN</button>
+            </div>
             <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">
                 <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span>Меню</span>
+                <span data-i18n="menu">Меню</span>
             </button>
         </div>
     </header>
@@ -32,55 +36,55 @@
     <div class="app-layout">
         <aside id="sidebar" class="sidebar" aria-label="Основна навигация">
             <div class="sidebar-intro">
-                <span class="sidebar-kicker">ТВОЯТ УЧЕБЕН ПЪТ</span>
-                <p>От първата графика до самостоятелен анализ.</p>
+                <span class="sidebar-kicker" data-i18n="learningPath">ТВОЯТ УЧЕБЕН ПЪТ</span>
+                <p data-i18n="learningPathText">От първата графика до самостоятелен анализ.</p>
             </div>
 
             <nav class="main-nav">
                 <div class="nav-group">
-                    <span class="nav-group-title">СТАРТ</span>
-                    <button class="nav-link" data-page="home"><span class="nav-icon">⌂</span><span>Начало и основи</span></button>
+                    <span class="nav-group-title" data-i18n="groupStart">СТАРТ</span>
+                    <button class="nav-link" data-page="home"><span class="nav-icon">⌂</span><span data-i18n="navHome">Начало и основи</span></button>
                 </div>
                 <div class="nav-group">
-                    <span class="nav-group-title">ПАЗАРНА СТРУКТУРА</span>
-                    <button class="nav-link" data-page="trend"><span class="nav-icon">↗</span><span>Тренд и структура</span></button>
-                    <button class="nav-link" data-page="supportResistance"><span class="nav-icon">▥</span><span>Подкрепа и съпротива</span></button>
-                    <button class="nav-link" data-page="fvg"><span class="nav-icon">◫</span><span>Fair Value Gap</span></button>
-                    <button class="nav-link" data-page="emaStrategy"><span class="nav-icon">∿</span><span>EMA 50 и EMA 200</span></button>
+                    <span class="nav-group-title" data-i18n="groupStructure">ПАЗАРНА СТРУКТУРА</span>
+                    <button class="nav-link" data-page="trend"><span class="nav-icon">↗</span><span data-i18n="navTrend">Тренд и структура</span></button>
+                    <button class="nav-link" data-page="supportResistance"><span class="nav-icon">▥</span><span data-i18n="navSupport">Подкрепа и съпротива</span></button>
+                    <button class="nav-link" data-page="fvg"><span class="nav-icon">◫</span><span data-i18n="navFvg">Fair Value Gap</span></button>
+                    <button class="nav-link" data-page="emaStrategy"><span class="nav-icon">∿</span><span data-i18n="navEma">EMA 50 и EMA 200</span></button>
                 </div>
                 <div class="nav-group">
-                    <span class="nav-group-title">ЯПОНСКИ СВЕЩИ</span>
-                    <button class="nav-link" data-page="basicCandles"><span class="nav-icon">│</span><span>Единични модели</span></button>
-                    <button class="nav-link" data-page="doubleCandles"><span class="nav-icon">Ⅱ</span><span>Двойни модели</span></button>
-                    <button class="nav-link" data-page="tripleCandles"><span class="nav-icon">Ⅲ</span><span>Тройни модели</span></button>
-                    <button class="nav-link" data-page="continuationPatterns"><span class="nav-icon">⇢</span><span>Продължаващи модели</span></button>
+                    <span class="nav-group-title" data-i18n="groupCandles">ЯПОНСКИ СВЕЩИ</span>
+                    <button class="nav-link" data-page="basicCandles"><span class="nav-icon">│</span><span data-i18n="navBasicCandles">Единични модели</span></button>
+                    <button class="nav-link" data-page="doubleCandles"><span class="nav-icon">Ⅱ</span><span data-i18n="navDoubleCandles">Двойни модели</span></button>
+                    <button class="nav-link" data-page="tripleCandles"><span class="nav-icon">Ⅲ</span><span data-i18n="navTripleCandles">Тройни модели</span></button>
+                    <button class="nav-link" data-page="continuationPatterns"><span class="nav-icon">⇢</span><span data-i18n="navContinuation">Продължаващи модели</span></button>
                 </div>
                 <div class="nav-group">
-                    <span class="nav-group-title">МЕТОДИ И СТРАТЕГИИ</span>
-                    <button class="nav-link" data-page="smt"><span class="nav-icon">⇄</span><span>SMT дивергенция</span></button>
-                    <button class="nav-link" data-page="amdStrategy"><span class="nav-icon">◉</span><span>AMD и Premium / Discount</span></button>
-                    <button class="nav-link" data-page="goldSwingStrategy"><span class="nav-icon">✦</span><span>Gold Swing Strategy</span></button>
+                    <span class="nav-group-title" data-i18n="groupStrategies">МЕТОДИ И СТРАТЕГИИ</span>
+                    <button class="nav-link" data-page="smt"><span class="nav-icon">⇄</span><span data-i18n="navSmt">SMT дивергенция</span></button>
+                    <button class="nav-link" data-page="amdStrategy"><span class="nav-icon">◉</span><span data-i18n="navAmd">AMD и Premium / Discount</span></button>
+                    <button class="nav-link" data-page="goldSwingStrategy"><span class="nav-icon">✦</span><span data-i18n="navGold">Gold Swing Strategy</span></button>
                 </div>
                 <div class="nav-group">
-                    <span class="nav-group-title">РИСК И ДИСЦИПЛИНА</span>
-                    <button class="nav-link" data-page="riskManagement"><span class="nav-icon">◇</span><span>Управление на риска</span></button>
+                    <span class="nav-group-title" data-i18n="groupRisk">РИСК И ДИСЦИПЛИНА</span>
+                    <button class="nav-link" data-page="riskManagement"><span class="nav-icon">◇</span><span data-i18n="navRisk">Управление на риска</span></button>
                 </div>
             </nav>
             <div class="sidebar-footer">
-                <span>УЧИ СЕ · НАБЛЮДАВАЙ · ЗАПИСВАЙ</span>
-                <p>Няма гарантирани сигнали. Първо разбиране, после практика.</p>
+                <span data-i18n="footerMotto">УЧИ СЕ · НАБЛЮДАВАЙ · ЗАПИСВАЙ</span>
+                <p data-i18n="footerNote">Няма гарантирани сигнали. Първо разбиране, после практика.</p>
             </div>
         </aside>
 
         <main id="app" class="main-content" tabindex="-1" aria-live="polite">
-            <div class="loading-state">Зареждане на учебното съдържание…</div>
+            <div class="loading-state" data-i18n="loading">Зареждане на учебното съдържание…</div>
         </main>
     </div>
 
     <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
         <div class="modal-content">
             <button class="modal-close" type="button" aria-label="Затвори">×</button>
-            <p class="eyebrow">КРАТКО ОБЯСНЕНИЕ</p>
+            <p class="eyebrow" data-i18n="modalKicker">КРАТКО ОБЯСНЕНИЕ</p>
             <h2 id="modal-title">Термин</h2>
             <p id="modal-text"></p>
         </div>
@@ -88,7 +92,7 @@
 
     <footer class="site-footer">
         <span>ILICH TRADING ACADEMY</span>
-        <span>Образователно съдържание · Не е инвестиционен съвет</span>
+        <span data-i18n="footerDisclaimer">Образователно съдържание · Не е инвестиционен съвет</span>
     </footer>
     <script src="app.js" defer></script>
 </body>
