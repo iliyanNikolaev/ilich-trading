@@ -2,34 +2,94 @@
 <html lang="bg">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XAU/USD Trading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="description" content="Практическа академия за трейдинг: пазарна структура, технически анализ, стратегии и управление на риска.">
+    <title>Ilich Trading Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <button onclick="navigateTo('home')">Начало</button>
-        <button onclick="navigateTo('trend')">Определяне на Тренда</button>
-        <button onclick="navigateTo('supportResistance')">Нива на Подкрепа и Съпротива</button>
-        <button onclick="navigateTo('fvg')">Какво е FVG?</button>
-        <button onclick="navigateTo('emaStrategy')">50EMA и 200EMA</button>
-        <button onclick="navigateTo('basicCandles')">Основни единични свещи</button>
-        <button onclick="navigateTo('doubleCandles')">Двойни свещни модели</button>
-        <button onclick="navigateTo('tripleCandles')">Тройни модели</button>
-        <button onclick="navigateTo('continuationPatterns')">Продължаващи модели</button>
-        <button onclick="navigateTo('smt')">Какво е SMT?</button>
-        <button onclick="navigateTo('goldSwingStrategy')">Gold Swing стратегия</button>
-    </nav>
-    <div id="app"></div>
+    <header class="topbar">
+        <a class="brand" href="#home" aria-label="Ilich Trading Academy - начало" onclick="navigateTo('home'); return false;">
+            <span class="brand-mark" aria-hidden="true">IT</span>
+            <span class="brand-copy">
+                <strong>ILICH TRADING</strong>
+                <small>ACADEMY · XAU/USD</small>
+            </span>
+        </a>
+        <div class="topbar-right">
+            <span class="learning-badge"><span class="status-dot"></span> Учебен режим</span>
+            <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">
+                <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>Меню</span>
+            </button>
+        </div>
+    </header>
 
-    <!-- Модален прозорец за обяснения -->
-    <div id="modal" class="modal">
+    <div id="nav-overlay" class="nav-overlay" hidden></div>
+    <div class="app-layout">
+        <aside id="sidebar" class="sidebar" aria-label="Основна навигация">
+            <div class="sidebar-intro">
+                <span class="sidebar-kicker">ТВОЯТ УЧЕБЕН ПЪТ</span>
+                <p>От първата графика до самостоятелен анализ.</p>
+            </div>
+
+            <nav class="main-nav">
+                <div class="nav-group">
+                    <span class="nav-group-title">СТАРТ</span>
+                    <button class="nav-link" data-page="home"><span class="nav-icon">⌂</span><span>Начало и основи</span></button>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-group-title">ПАЗАРНА СТРУКТУРА</span>
+                    <button class="nav-link" data-page="trend"><span class="nav-icon">↗</span><span>Тренд и структура</span></button>
+                    <button class="nav-link" data-page="supportResistance"><span class="nav-icon">▥</span><span>Подкрепа и съпротива</span></button>
+                    <button class="nav-link" data-page="fvg"><span class="nav-icon">◫</span><span>Fair Value Gap</span></button>
+                    <button class="nav-link" data-page="emaStrategy"><span class="nav-icon">∿</span><span>EMA 50 и EMA 200</span></button>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-group-title">ЯПОНСКИ СВЕЩИ</span>
+                    <button class="nav-link" data-page="basicCandles"><span class="nav-icon">│</span><span>Единични модели</span></button>
+                    <button class="nav-link" data-page="doubleCandles"><span class="nav-icon">Ⅱ</span><span>Двойни модели</span></button>
+                    <button class="nav-link" data-page="tripleCandles"><span class="nav-icon">Ⅲ</span><span>Тройни модели</span></button>
+                    <button class="nav-link" data-page="continuationPatterns"><span class="nav-icon">⇢</span><span>Продължаващи модели</span></button>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-group-title">МЕТОДИ И СТРАТЕГИИ</span>
+                    <button class="nav-link" data-page="smt"><span class="nav-icon">⇄</span><span>SMT дивергенция</span></button>
+                    <button class="nav-link" data-page="amdStrategy"><span class="nav-icon">◉</span><span>AMD и Premium / Discount</span></button>
+                    <button class="nav-link" data-page="goldSwingStrategy"><span class="nav-icon">✦</span><span>Gold Swing Strategy</span></button>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-group-title">РИСК И ДИСЦИПЛИНА</span>
+                    <button class="nav-link" data-page="riskManagement"><span class="nav-icon">◇</span><span>Управление на риска</span></button>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <span>УЧИ СЕ · НАБЛЮДАВАЙ · ЗАПИСВАЙ</span>
+                <p>Няма гарантирани сигнали. Първо разбиране, после практика.</p>
+            </div>
+        </aside>
+
+        <main id="app" class="main-content" tabindex="-1" aria-live="polite">
+            <div class="loading-state">Зареждане на учебното съдържание…</div>
+        </main>
+    </div>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <button class="modal-close" type="button" aria-label="Затвори">×</button>
+            <p class="eyebrow">КРАТКО ОБЯСНЕНИЕ</p>
+            <h2 id="modal-title">Термин</h2>
             <p id="modal-text"></p>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <footer class="site-footer">
+        <span>ILICH TRADING ACADEMY</span>
+        <span>Образователно съдържание · Не е инвестиционен съвет</span>
+    </footer>
+    <script src="app.js" defer></script>
 </body>
 </html>
